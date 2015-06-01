@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private static final String TAG = "JOE";
     private String text = "Tap to take a picture.";
+    private CommandRunner cr = new CommandRunner();
 
     private View mView;
 
@@ -207,7 +208,7 @@ public class MainActivity extends Activity {
     }
 
     private void processImage(final String picturePath) {
-        String text = TessaractOCR.processPicture(picturePath);
+        final String text = TessaractOCR.processPicture(picturePath);
         final String response = processText(text);
         Log.v(TAG, "Response: " + response);
         runOnUiThread(new Runnable() {

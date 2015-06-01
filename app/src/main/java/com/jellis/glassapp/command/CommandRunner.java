@@ -15,16 +15,25 @@ import java.util.Set;
 public class CommandRunner {
 
     private static final String TAG = "JOE";
-    private static final Command[] commands = { new Text() };
+    private static Command[] commands = { new Text(), new Email() };
 
-    private CommandRunner() {
+    public CommandRunner() {
     }
 
     public static String run(String command, String[] args) {
         String response = "Uknown command: " + command;
+        if (true) {
+            return commands[1].execute(new String[]{"ellis125@gmail.com", "Hi"});
+        }
         for (Command c : commands) {
             if (c.getCommandText().equalsIgnoreCase(command)) {
-                response = c.execute(args);
+                try {
+                    response = c.execute(args);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.v(TAG, "Failed: " + e.getCause());
+                    response = "Failed: " + e.getCause();
+                }
                 break;
             }
         }

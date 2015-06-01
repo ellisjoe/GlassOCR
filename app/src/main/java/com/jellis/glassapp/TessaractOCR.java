@@ -27,7 +27,7 @@ public class TessaractOCR {
         baseApi.setDebug(true);
         baseApi.setPageSegMode(TessBaseAPI.PageSegMode.PSM_AUTO_OSD);
         baseApi.setVariable("language_model_penalty_non_dict_word", "0.95");
-        baseApi.setVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+        baseApi.setVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.");
     }
 
     private TessaractOCR () {
