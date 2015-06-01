@@ -60,13 +60,13 @@ public class Text implements Command {
                 (ACCOUNT_SID + ":" + AUTH_TOKEN).getBytes(),
                 Base64.NO_WRAP);
 
-        httppost.setHeader("Authorization",
-                base64EncodedCredentials);
+        httppost.setHeader("Authorization", base64EncodedCredentials);
+
         try {
 
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("From", "+17797044090"));
-            nameValuePairs.add(new BasicNameValuePair("To", "+18153882890"));
+            nameValuePairs.add(new BasicNameValuePair("To", "+1" + number));
             nameValuePairs.add(new BasicNameValuePair("Body", text));
 
             httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));

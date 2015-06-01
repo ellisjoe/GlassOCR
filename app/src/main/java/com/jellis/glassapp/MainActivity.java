@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
      * {@link CardScrollView} to use as the main content view.
      */
     private CardScrollView mCardScroller;
-    private static final String TAG = "JOE";
+    private static final String TAG = "Main";
     private String text = "Tap to take a picture.";
     private CommandRunner cr = new CommandRunner();
 
@@ -124,12 +124,13 @@ public class MainActivity extends Activity {
             String picturePath = data.getStringExtra(Intents.EXTRA_PICTURE_FILE_PATH);
 
             // Plays disallowed sound to indicate that TAP actions are not supported.
-            AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            am.playSoundEffect(Sounds.DISALLOWED);
+            //AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            //am.playSoundEffect(Sounds.DISALLOWED);
 
             // TODO: Show the thumbnail to the user while the full picture is being
             // processed.
             processPictureWhenReady(picturePath);
+            //processPictureWhenReady(thumbnailPath);
         }
 
         super.onActivityResult(requestCode, resultCode, data);
@@ -208,7 +209,8 @@ public class MainActivity extends Activity {
     }
 
     private void processImage(final String picturePath) {
-        final String text = TessaractOCR.processPicture(picturePath);
+        String text = TessaractOCR.processPicture(picturePath);
+        text = "Text 8153882890 Hi";
         final String response = processText(text);
         Log.v(TAG, "Response: " + response);
         runOnUiThread(new Runnable() {
