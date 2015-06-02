@@ -23,5 +23,5 @@ Notes
 
 * Translating the pictures into text can benefit from more preprocessing
 * The GDK (Glass Development Kit) does not provide many of the standard APIs
-  that a phone does, so without a dedicated phone application Glass isn't able
-  to easily do things like text or email
+  that the Android SDK does, so without a dedicated phone application Glass
+  isn't able to easily do things like text or email
