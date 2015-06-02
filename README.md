@@ -24,4 +24,5 @@ Notes
 * Translating the pictures into text can benefit from more preprocessing
 * The GDK (Glass Development Kit) does not provide many of the standard APIs
   that the Android SDK does, so without a dedicated phone application Glass
-  isn't able to easily do things like text or email
+  isn't able to easily do things like text or email (which is why Twillio is
+  being used to send texts directly from Glass).
