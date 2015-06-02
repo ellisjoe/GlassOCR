@@ -72,7 +72,16 @@ public class MainActivity extends Activity {
         setView(card.getView());
     }
 
-    private void setView(View view) {
+    private void setView(final View view) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                setViewThread(view);
+            }
+        });
+    }
+
+    private void setViewThread(View view) {
         mView = view;
 
         mCardScroller = new CardScrollView(this);
@@ -210,7 +219,6 @@ public class MainActivity extends Activity {
 
     private void processImage(final String picturePath) {
         String text = TessaractOCR.processPicture(picturePath);
-        text = "Text 8153882890 Hi";
         final String response = processText(text);
         Log.v(TAG, "Response: " + response);
         runOnUiThread(new Runnable() {

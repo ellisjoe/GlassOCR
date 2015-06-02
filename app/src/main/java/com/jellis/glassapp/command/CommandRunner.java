@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class CommandRunner {
 
-    private static final String TAG = "JOE";
+    private static final String TAG = "CommandRunner";
     private static Command[] commands = { new Text(), new Email(), new Photo() };
 
     public CommandRunner() {

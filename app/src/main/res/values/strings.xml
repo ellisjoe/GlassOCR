@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Glass App</string>
-    <string name="title_activity_main">Hello World Immersion</string>
+    <string name="app_name">Glass OCR</string>
+    <string name="title_activity_main">Glass OCR</string>
     <string name="hello_world">Hello world!</string>
 </resources>

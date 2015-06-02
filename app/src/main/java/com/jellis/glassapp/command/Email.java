@@ -13,7 +13,6 @@ import java.util.Arrays;
 public class Email extends Activity implements Command {
 
     public Email() {
-
     }
 
     @Override
